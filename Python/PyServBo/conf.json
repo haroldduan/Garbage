@@ -1,8 +1,8 @@
 {
-    "db_server": "192.168.20.46",
+    "db_server": "*******",
     "db_user": "sa",
-    "db_passwd": "AVAtech2015!",
-    "db_company": "SBO_GE052_02_TEST3",
+    "db_passwd": "*******",
+    "db_company": "*******",
     "db_view": "",
     "api_addr": "http://localhost:9091/sap/v1/materialrevaluation"
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+
+{{template "header" .}}
+
+<body>
+  <div class="container">
+    {{template "navbar" .}}
+    <h1>修改文章</h1>
+    <form method="POST" action="/topic" name="topic">
+      <input type="hidden" name="tID" class="form-control" value="{{.Topic.ID}}">
+      <div class="form-group">
+        <label>文章标题：</label>
+        <input type="text" name="title" class="form-control" value="{{.Topic.Title}}">
+      </div>
+      <div class="form-group">
+        <label>文章分类：</label>
+        <input type="text" name="category" class="form-control" value="{{.Topic.Category}}">
+      </div>
+      <div class="form-group">
+        <label>文章内容：</label>
+        <textarea name="content" cols="30" rows="10" class="form-control">{{.Topic.Content}}</textarea>
+      </div>
+      <input type="hidden" name="op" value="add">
+      <button type="submit" class="btn btn-default" onclick="return checkInput();">修改文章</button>
+      <button class="btn btn-default" onclick="return backToHome();">返回</button>
+    </form>
+  </div>
+  <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+  <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+  <!-- 包括所有已编译的插件 -->
+  <!-- <script src="/static/js/bootstrap.min.js"></script> -->
+  <script text="text/javascript">
+    function checkInput() {
+      // let userName = document.getElementById("userName").value;
+      let categoryName = category.categoryName.value;
+      if (categoryName.length == 0) {
+        alert("请输入分类名称");
+        return false;
+      }
+      return true;
+    }
+
+    function backToHome() {
+      window.location.href = "/topic";
+      return false;
+    }
+  </script>
+</body>
+
+</html>

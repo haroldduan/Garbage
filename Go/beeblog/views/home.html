@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<html>
+
+{{template "header" .}}
+
+<body>
+  <div class="container">
+    {{template "navbar" .}}
+
+    <div class="col-md-9">
+      {{range .Topics}}
+      <div class="page-header">
+        <h1><a href="/topic/view/{{.ID}}">{{.Title}}</a></h1>
+        <h6 class="text-muted">文章发表于 {{.Created}},共有 {{.Views}} 次浏览 ,{{.ReplyCount}} 个评论</h6>
+        <p>
+          {{.Content}}
+        </p>
+        {{end}}
+      </div>
+    </div>
+    <div class="col-md-3">
+      <h3>文章分类</h3>
+      {{range .Categories}}
+      <li><a href="/?cate={{.Title}}">{{.Title}}</a></li>
+      {{end}}
+    </div>
+  </div>
+  <!-- jQuery (Bootstrap 的 JavaScript 插件需要引入 jQuery) -->
+  <!-- <script src="https://code.jquery.com/jquery.js"></script> -->
+  <!-- 包括所有已编译的插件 -->
+  <!-- <script src="/static/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
